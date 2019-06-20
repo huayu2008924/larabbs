@@ -56,4 +56,11 @@
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
+  'summerblue/generator' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Summerblue\\Generator\\GeneratorsServiceProvider',
+    ),
+  ),
 );

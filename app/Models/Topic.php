@@ -4,8 +4,11 @@ namespace App\Models;
 
 class Topic extends Model
 {
-    protected $fillable = ['title', 'body', 'user_id', 'category_id',
-        'reply_count', 'view_count', 'last_reply_user_id', 'order',
+    /*
+     * $fillable 属性允许用户直接对数据进行修改，在每一次开发数据模型的 CRUD 功能时，
+     * 我们都要慎重地对 $fillable 属性进行定制
+     */
+    protected $fillable = ['title', 'body', 'category_id',
         'excerpt', 'slug'];
 
     public function category()

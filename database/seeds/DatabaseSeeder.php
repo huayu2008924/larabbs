@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         //请注意 run() 方法里的顺序，我们先生成用户数据，再生出话题数据。
         $this->call(UsersTableSeeder::class);
-		$this->call(TopicsTableSeeder::class);
+        $this->call(TopicsTableSeeder::class);
+		$this->call(ReplysTableSeeder::class);
+
     }
 }

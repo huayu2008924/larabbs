@@ -163,3 +163,18 @@ body {
     background-color: #d15b47 !important;
   }
 }
+// 导航栏 二级菜单
+.navbar-collapse > ul > li > ul{
+  padding: 8px;
+  position: absolute;
+  top: 100%;
+  background: white;
+  white-space: nowrap;
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.5);
+  display: none;
+}
+
+.navbar-collapse > ul > li:hover > ul{
+  display: block;
+}
+

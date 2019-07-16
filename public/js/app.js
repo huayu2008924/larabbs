@@ -49212,7 +49212,19 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 
 var app = new Vue({
   el: '#app'
-});
+}); //二级下拉菜单
+
+/*let liTags = document.querySelectorAll(".navbar-collapse > ul > li");
+for (let i=0; i<liTags.length; i++){
+    liTags[i].onmouseenter = function (e) {
+        let li = e.currentTarget;
+        li.classList.add("active");
+    }
+    liTags[i].onmouseleave = function (e) {
+        let li = e.currentTarget;
+        li.classList.remove("active");
+    }
+}*/
 
 /***/ }),
 

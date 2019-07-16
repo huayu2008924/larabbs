@@ -17091,3 +17091,17 @@ body {
   background-color: #d15b47 !important;
 }
 
+.navbar-collapse > ul > li > ul {
+  padding: 8px;
+  position: absolute;
+  top: 100%;
+  background: white;
+  white-space: nowrap;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.navbar-collapse > ul > li:hover > ul {
+  display: block;
+}
+

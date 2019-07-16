@@ -1,4 +1,8 @@
 <?php
+/**
+ * 自定义辅助函数
+ * @return mixed
+ */
 //
 function route_class(){
     return str_replace('.','-',Route::currentRouteName());

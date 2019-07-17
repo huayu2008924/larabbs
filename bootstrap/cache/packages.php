@@ -107,6 +107,13 @@
       0 => 'Spatie\\Permission\\PermissionServiceProvider',
     ),
   ),
+  'summerblue/administrator' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Frozennode\\Administrator\\AdministratorServiceProvider',
+    ),
+  ),
   'summerblue/generator' => 
   array (
     'providers' => 

@@ -4,11 +4,16 @@ namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
+/**
+ * Class Kernel
+ * 9.4 用户最后登录时间里有详细注释
+ * @package App\Http
+ */
 class Kernel extends HttpKernel
 {
     /**
      * The application's global HTTP middleware stack.
-     *
+     * 全局中间件
      * These middleware are run during every request to your application.
      *
      * @var array
@@ -36,6 +41,8 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\EnsureEmailIsVerified::class,      // <<--- 只需添加这一行
+            // 记录用户最后活跃时间
+            \App\Http\Middleware\RecordLastActivedTime::class,
         ],
 
         'api' => [

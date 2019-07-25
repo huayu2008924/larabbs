@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Observers\LinkObserver;
 use Illuminate\Support\ServiceProvider;
 use App\Models\User;
 use App\Models\Topic;
 use App\Models\Reply;
+use App\Models\Link;
 use App\Observers\UserObserver;
 use App\Observers\TopicObserver;
 use App\Observers\ReplyObserver;
@@ -35,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
 		User::observe(UserObserver::class);
 		Topic::observe(TopicObserver::class);
         Reply::observe(ReplyObserver::class);
+        Link::observe(LinkObserver::class);
         //
         \Horizon::auth(function ($request) {
             // 是否是站长

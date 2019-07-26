@@ -56,5 +56,28 @@ trait LastActivedAtHelper
         // 以数据库为中心的存储，既已同步，即可删除
         Redis::del($hash);
     }
+
+    public function getLastActivedAtAttribute($value)
+    {
+        // 获取今天的日期
+        $date = Carbon::now()->toDateString();
+
+        // Redis 哈希表的命名，如：larabbs_last_actived_at_2017-10-21
+        $hash = $this->hash_prefix . $date;
+
+        // 字段名称，如：user_1
+        $field = $this->field_prefix . $this->id;
+
+        // 三元运算符，优先选择 Redis 的数据，否则使用数据库中
+        $datetime = Redis::hGet($hash, $field) ? : $value;
+
+        // 如果存在的话，返回时间对应的 Carbon 实体
+        if ($datetime) {
+            return new Carbon($datetime);
+        } else {
+            // 否则使用用户注册时间
+            return $this->created_at;
+        }
+    }
 }
 
